@@ -48,12 +48,38 @@ lang=["C++","C","Java","Python","Ruby"]
 votes1=[15,10,20,50,5]
 
 explodes=[0,0,0,0,0.2]
-plt.pie(votes1,labels=lang, explode=explodes, autopct="%.0f%%", pctdistance=0.8, startangle=45)
-plt.show()
+#plt.pie(votes1,labels=lang, explode=explodes, autopct="%.0f%%", pctdistance=0.8, startangle=45)
+#plt.show()
 
 #------------------------------------------------------
 #creating data for box plot
 heights=np.random.normal(172,8,300)
-plt.boxplot(heights)    
+#plt.boxplot(heights)    
+#plt.show()
+#------------------------------------------------------
+# customize you plot with title, xlabel, ylabel, grid, fontname, fontsize, color.
+year=[2014,2015,2016,2017,2018,2019,2020,2021]
+income=[55,56,62,61,72,72,73,75]
+plt.plot(year,income)
+#plt.title adds the title to the plot, you can customize with fontsize, color, font-family and more.
+plt.title("Income of the Robert", fontsize=20, color="red", fontname="Times New Roman")
+#plt.xlabel is used to add labels to the x-axis, you can customize with fontsize, color, font-family and more. Same applies for the ylabel.
+plt.xlabel("Year")
+plt.ylabel("Income")
+#plt.grid is used to plot the grid line in your plot.
+plt.grid()
+plt.show()
+#------------------------------------------------------
+
+#adding legends to the plot
+
+sample1=np.random.randint(0,20,10)
+sample2=np.random.randint(0,20,10)
+sample3=np.random.randint(0,20,10)
+plt.plot(sample1, label="sample 1")
+plt.plot(sample2, label="sample 2")
+plt.plot(sample3, label="sample 3")
+#you have to add this plt.legend() to show the legends in the plot. you can change the position of the legend box using the loc attribute 
+plt.legend(loc="lower center")
 plt.show()
 #------------------------------------------------------
