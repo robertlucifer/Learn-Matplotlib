@@ -9,8 +9,8 @@ Y=np.random.randint(0,50,size=50)
 #Marker is used to change the marker style [o,*,+, s[square], v [triangle_down], ^ [triangle_up], <[triangle_left], > [triangle_right], p[pentagon], h [hexagon], D [diamond], d[thin_diamond], |[vertical line], _ [horizaontal line], x[x]. 
 #S is used to mention the size of the marker. 
 #Alpha is used to mention the transparency of the marker.
-#plt.scatter(X,Y, c="red", marker="|", s=50,  alpha=0.5)
-#plt.show()
+plt.scatter(X,Y, c="red", marker="|", s=50,  alpha=0.5)
+plt.show()
 #------------------------------------------------------
 
 # creating data for line plot
@@ -32,15 +32,15 @@ votes=[100,90,80,70,60,50,60,70,60,100]
 # width is used me mention the width of each bar in the graph. 
 #edge color is used to mention the border color of the bars.
 #Linewidth is used to mention the width of the border.
-#plt.bar(pro,votes, color="red", linewidth=2, edgecolor="green", width=0.5)
-#plt.show()
+plt.bar(pro,votes, color="red", linewidth=2, edgecolor="green", width=0.5)
+plt.show()
 
 #------------------------------------------------------
 
 #creating data for Histogram
 hist1=np.random.normal(20,1.5,1000)
-#plt.hist(hist1,bins=20,cumulative=True)
-#plt.show()
+plt.hist(hist1,bins=20,cumulative=True)
+plt.show()
 
 #------------------------------------------------------
 #creating data for pie chart
@@ -48,14 +48,14 @@ lang=["C++","C","Java","Python","Ruby"]
 votes1=[15,10,20,50,5]
 
 explodes=[0,0,0,0,0.2]
-#plt.pie(votes1,labels=lang, explode=explodes, autopct="%.0f%%", pctdistance=0.8, startangle=45)
-#plt.show()
+plt.pie(votes1,labels=lang, explode=explodes, autopct="%.0f%%", pctdistance=0.8, startangle=45)
+plt.show()
 
 #------------------------------------------------------
 #creating data for box plot
 heights=np.random.normal(172,8,300)
-#plt.boxplot(heights)    
-#plt.show()
+plt.boxplot(heights)    
+plt.show()
 #------------------------------------------------------
 # customize you plot with title, xlabel, ylabel, grid, fontname, fontsize, color.
 year=[2014,2015,2016,2017,2018,2019,2020,2021]
@@ -88,7 +88,7 @@ plt.show()
 from matplotlib import style   
 #this creates different style of plots.
 style.use("ggplot")
-style.use("dark_background")
+
 
 #------------------------------------------------------
 
@@ -116,8 +116,20 @@ axs[1,0].plot(a,a**4)
 axs[1,1].plot(a,a**5)
 #you can add title to each plot using set_title and by mentioning the index of that plot, you can use all the customzation.
 axs[0,0].set_title("Square")
+
+
+#saving the plot and dpi is used to mention the quality of the immage, and you can also add the transparent background.
+
 plt.savefig("plot.png",dpi=300,transparent=True)
 plt.show()
 #------------------------------------------------------
 
-#saving the plot and dpi is used to mention the quality of the immage, and you can also add the transparent background.
+
+#creating 3d plots
+
+ax=plt.axes(projection="3d")
+x=np.random.randint(0,50,100)
+y=np.random.randint(0,50,100)
+z=np.random.randint(0,50,100)
+ax.scatter(x,y,z,c=x+y)
+plt.show()
