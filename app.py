@@ -83,3 +83,41 @@ plt.plot(sample3, label="sample 3")
 plt.legend(loc="lower center")
 plt.show()
 #------------------------------------------------------
+#importing style sheet from matplotlib.
+
+from matplotlib import style   
+#this creates different style of plots.
+style.use("ggplot")
+style.use("dark_background")
+
+#------------------------------------------------------
+
+#creating multiple plots
+
+x1, y1=np.random.randint(0,50,10),np.random.randint(0,50,10)
+x2, y2=np.random.randint(0,50,10),np.random.randint(0,50,10)
+plt.figure(1)
+plt.plot(x1,y1)
+
+plt.figure(2)
+plt.plot(x2,y2)
+#by adding multiple figures you can display both the plot in the sametime.
+plt.show()
+
+#------------------------------------------------------
+
+#using axes to plot multiple plots in the same figure.
+a=np.random.randint(0,50,10)
+fig, axs=plt.subplots(2,2)
+#using index you can plot multiple plots in a single figure.
+axs[0,0].plot(a,a**2)
+axs[0,1].plot(a,a**3)
+axs[1,0].plot(a,a**4)
+axs[1,1].plot(a,a**5)
+#you can add title to each plot using set_title and by mentioning the index of that plot, you can use all the customzation.
+axs[0,0].set_title("Square")
+plt.savefig("plot.png",dpi=300,transparent=True)
+plt.show()
+#------------------------------------------------------
+
+#saving the plot and dpi is used to mention the quality of the immage, and you can also add the transparent background.
