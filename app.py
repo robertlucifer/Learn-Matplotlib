@@ -20,8 +20,8 @@ weights=np.random.randint(70,85,size=16)
 #All the markers in scatter can also used in line plot. 
 #Line width can be defined using lw="size.
 #Line style can be mention using linestyle="--""
-#plt.plot(years,weights, c="red", marker="*",lw=5, linestyle="--")
-#plt.show()
+plt.plot(years,weights, c="red", marker="*",lw=5, linestyle="--")
+plt.show()
 #------------------------------------------------------
 
 #creating data for bar plot
