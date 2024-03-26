@@ -9,7 +9,7 @@ Y=np.random.randint(0,50,size=50)
 #Marker is used to change the marker style [o,*,+, s[square], v [triangle_down], ^ [triangle_up], <[triangle_left], > [triangle_right], p[pentagon], h [hexagon], D [diamond], d[thin_diamond], |[vertical line], _ [horizaontal line], x[x]. 
 #S is used to mention the size of the marker. 
 #Alpha is used to mention the transparency of the marker.
-plt.scatter(X,Y, c="red", marker="|", s=50,  alpha=0.5)
+plt.scatter(X,Y, c="red", marker="*", s=50,  alpha=0.5)
 plt.show()
 #------------------------------------------------------
 
@@ -110,10 +110,10 @@ plt.show()
 a=np.random.randint(0,50,10)
 fig, axs=plt.subplots(2,2)
 #using index you can plot multiple plots in a single figure.
-axs[0,0].plot(a,a**2)
-axs[0,1].plot(a,a**3)
-axs[1,0].plot(a,a**4)
-axs[1,1].plot(a,a**5)
+axs[0,0].scatter(a,a**2)
+axs[0,1].scatter(a,a**3)
+axs[1,0].scatter(a,a**4)
+axs[1,1].scatter(a,a**5)
 #you can add title to each plot using set_title and by mentioning the index of that plot, you can use all the customzation.
 axs[0,0].set_title("Square")
 
@@ -132,4 +132,9 @@ x=np.random.randint(0,50,100)
 y=np.random.randint(0,50,100)
 z=np.random.randint(0,50,100)
 ax.scatter(x,y,z,c=x+y)
+ax.set_title("3D Scatter plot")
+ax.set_xlabel("X-axis")
+ax.set_ylabel("Y-axis")
+ax.set_zlabel("Z-axis")
+ax.view_init(0,90)
 plt.show()
